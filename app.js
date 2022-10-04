@@ -10,7 +10,7 @@ app.use(express.json())
 app.use('/user',user)
 app.use('/car',car)
 
-const url = 'mongodb://127.0.0.1/reactbackend'
+const url = 'mongodb://127.0.0.1/carsalebackend'
 
 mongoose.connect(url,{useNewUrlParser: true})
 const con = mongoose.connection
