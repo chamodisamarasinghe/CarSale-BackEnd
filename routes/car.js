@@ -11,10 +11,10 @@ connection.connect(function (err) {
         console.log(err);
     } else {
         console.log('connected to the MySQL Server');
-        var userTableQuery = "CREATE TABLE IF NOT EXISTS cars (registerNumber VARCHAR(255) PRIMARY KEY, brand VARCHAR(255), vehicleNumber VARCHAR(255), price VARCHAR(255))";
-        connection.query(userTableQuery, function (err, result) {
+        var carTableQuery = "CREATE TABLE IF NOT EXISTS cars (registerNumber VARCHAR(255) PRIMARY KEY, brand VARCHAR(255), vehicleNumber VARCHAR(255), price VARCHAR(255))";
+        connection.query(carTableQuery, function (err, result) {
             if (result.warningCount === 0) {
-                console.log("User table created");
+                console.log("Car table created");
             }
         })
     }
@@ -27,6 +27,11 @@ router.post('/', (req, res) => {
     const vehicleNumber = req.body.vehicleNumber;
     const price = req.body.price;
     
+
+
+    console.log(req.body);
+
+
 
     var query = "INSERT INTO users (registerNumber,brand,vehicleNumber,price) VALUES (?,?,?,?)";
 
