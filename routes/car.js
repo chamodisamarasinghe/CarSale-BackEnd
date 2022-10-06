@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
 
 
 
-    var query = "INSERT INTO users (registerNumber,brand,vehicleNumber,price) VALUES (?,?,?,?)";
+    var query = "INSERT INTO cars (registerNumber,brand,vehicleNumber,price) VALUES (?,?,?,?)";
 
     connection.query(query, [registerNumber, brand, vehicleNumber, price], (err) => {
         if (err) {
